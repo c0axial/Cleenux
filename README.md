@@ -1,5 +1,5 @@
 # Cleenux : Intro
-Cleenux is a simple bash program to remove: Retrieved Package Files, Old Config Files, Trashed Items & Old Kernels (Optional). This program will remove unwanted and old files and speedup your linux machine. And will free up your hard drive space.
+Cleenux is a simple bash program to remove: Retrieved Package Files, Old Config Files, Trashed Items & Old Kernels (Optional). This program will remove unwanted and old files and speedup your Linux machine. And will free up your hard drive space.
 
 # Cleenux : How to Install
 1. Clone the Repository ```git clone https://github.com/KID-X/Cleenux```
