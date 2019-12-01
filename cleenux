@@ -53,9 +53,8 @@ echo -e
 sudo apt-get purge $OLDKERNELS
 echo -e $GREEN"DONE!"$RED
 echo -e
-echo -e 
 
-echo -e $GREEN"CLEENUX >> DONE!"$END
+echo -e $GREEN"CLEENUX >> REMOVED ALL UNWANTED FILES, TRASHES AND TEMP FILES."$END
 echo -e 
 
 sleep 1
