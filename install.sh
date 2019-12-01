@@ -9,7 +9,7 @@ echo -e "Copying Files..."
 
 echo -e "Installation Complete..."
 echo -e
-echo -e "Now on, Simply use command "cleenux""
+echo -e "Now on, Simply use command: cleenux"
 
 sleep 1
 exit
