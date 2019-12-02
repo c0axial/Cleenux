@@ -8,12 +8,12 @@ REDL="\e[101m"
 RED="\033[0;31m"
 END="\033[0m"
 
-echo -e $GREEN"************************************************************************"$END
-echo -e $GREEN"************************** CLEENUX FOR DEBIAN **************************"$END
-echo -e $GREEN"************************      GITHUB/KID-X      ************************"$END
-echo -e $GREEN"************************************************************************"$END
-echo -e
-echo -e
+printf $GREEN"************************************************************************\n"$END
+printf $GREEN"************************** CLEENUX FOR DEBIAN **************************\n"$END
+printf $GREEN"************************      GITHUB/KID-X      ************************\n"$END
+printf $GREEN"************************************************************************\n"$END
+printf "\n"
+printf "\n"
 
 sleep 1
                                                                                                                                                                                                                                          
@@ -25,50 +25,55 @@ OLDKERNELS=$(dpkg -l|awk '{print $2}'|grep -E $LINUXPKG |grep -vE $METALINUXPKG|
 
 sleep 1
 
-echo -e $YELLOW"CLEENUX >> FIXING BROKEN INSTALLATIONS..."$RED
+if [ $USER != root ]; then
+printf $REDL"LOG IN AS ROOT TO CONTINUE.\n"
+exit
+
+fi
+
+printf $YELLOW"CLEENUX >> FIXING BROKEN INSTALLATIONS...\n"$RED
 sudo apt --fix-broken install
-echo -e $GREEN"DONE!"$RED
-echo -e
+printf $GREEN"DONE!\n"$RED
+printf "\n"
 
 sleep 1
-
-echo -e $YELLOW"CLEENUX >> CLEARING RETRIEVED PACKAGE FILES..."$RED
+printf $YELLOW"CLEENUX >> CLEARING RETRIEVED PACKAGE FILES...\n"$RED
 sudo apt-get clean
-echo -e $GREEN"DONE!"$RED
-echo -e
+printf $GREEN"DONE!\n"$RED
+printf "\n"
 
 sleep 1
 
-echo -e $YELLOW"CLEENUX >> CLEARING DEPENDENCIES THAT ARE NO LONGER REQUIRED..."$RED
+printf $YELLOW"CLEENUX >> CLEARING DEPENDENCIES THAT ARE NO LONGER REQUIRED...\n"$RED
 sudo apt-get autoremove
-echo -e $GREEN"DONE!"$RED
-echo -e
+printf $GREEN"DONE!\n"$RED
+printf "\n"
 
 sleep 1
 
-echo -e $YELLOW"CLEENUX >> CLEARING OLD CONFIG FILES..."$RED
+printf $YELLOW"CLEENUX >> CLEARING OLD CONFIG FILES...\n"$RED
 sudo apt-get purge $OLDCONF
-echo -e $GREEN"DONE!"$RED
-echo -e
+printf $GREEN"DONE!\n"$RED
+printf "\n"
 
 sleep 1
 
-echo -e $YELLOW"CLEENUX >> CLEARING TRASHED ITEMS..."$RED
+printf $YELLOW"CLEENUX >> CLEARING TRASHED ITEMS...\n"$RED
 rm -rf /home/*/.local/share/Trash/*/** &> /dev/null
 rm -rf /root/.local/share/Trash/*/** &> /dev/null
-echo -e $GREEN"DONE!"$RED
-echo -e
+printf $GREEN"DONE!\n"$RED
+printf "\n"
 
 sleep 1
 
-echo -e $YELLOW"CLEENUX >> CLEARING OLD KERNELS..."$REDL
-echo -e $BLINK"WARNING! REMOVING OLD KERNALS COULD CAUSE PROBLEMS. CONTINUE? [Y/N] : "$RED
-echo -e 
+printf $YELLOW"CLEENUX >> CLEARING OLD KERNELS...\n"$REDL
+printf $BLINK"WARNING! REMOVING OLD KERNALS COULD CAUSE PROBLEMS. CONTINUE? [Y/N] : \n"$RED
+printf "\n" 
 sudo apt-get purge $OLDKERNELS
-echo -e $GREEN"DONE!"$RED
-echo -e
+printf $GREEN"DONE!\n"$RED
+printf "\n"
 
-echo -e $GREEN"CLEENUX >> REMOVED ALL UNWANTED FILES, TRASHES AND TEMP FILES."$END
-echo -e 
+printf $GREEN"CLEENUX >> REMOVED ALL UNWANTED FILES, TRASHES AND TEMP FILES.\n"$END
+printf "\n"
 
 sleep 1
