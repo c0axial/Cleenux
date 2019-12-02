@@ -13,7 +13,6 @@ printf $GREEN"************************** CLEENUX FOR DEBIAN ********************
 printf $GREEN"************************      GITHUB/KID-X      ************************\n"$END
 printf $GREEN"************************************************************************\n"$END
 printf "\n"
-printf "\n"
 
 sleep 1
                                                                                                                                                                                                                                          
@@ -25,12 +24,12 @@ OLDKERNELS=$(dpkg -l|awk '{print $2}'|grep -E $LINUXPKG |grep -vE $METALINUXPKG|
 
 sleep 1
 
-if [ $USER != root ]; then
+if [[ $EUID -eq 0 ]]; then
 printf $REDL"LOG IN AS ROOT TO CONTINUE.\n"
+printf "/n"
 exit
 
 fi
-
 printf $YELLOW"CLEENUX >> FIXING BROKEN INSTALLATIONS...\n"$RED
 sudo apt --fix-broken install
 printf $GREEN"DONE!\n"$RED
