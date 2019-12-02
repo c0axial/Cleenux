@@ -8,4 +8,4 @@ Cleenux is a simple bash program to remove: Retrieved Package Files, Old Config 
 4. Make the installer.sh executable ```chmod +x install.sh```
 5. Install ```./install.sh```
 6. After installing use just ```cleenux``` in terminal to run the program.
-7. Ex: ```root@kali:~# cleenux```
+7. Example: ```root@kali:~# cleenux```
