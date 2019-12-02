@@ -25,6 +25,13 @@ OLDKERNELS=$(dpkg -l|awk '{print $2}'|grep -E $LINUXPKG |grep -vE $METALINUXPKG|
 
 sleep 1
 
+echo -e $YELLOW"CLEENUX >> FIXING BROKEN INSTALLATIONS..."$RED
+sudo apt --fix-broken install
+echo -e $GREEN"DONE!"$RED
+echo -e
+
+sleep 1
+
 echo -e $YELLOW"CLEENUX >> CLEARING RETRIEVED PACKAGE FILES..."$RED
 sudo apt-get clean
 echo -e $GREEN"DONE!"$RED
