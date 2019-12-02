@@ -8,10 +8,10 @@ REDL="\e[101m"
 RED="\033[0;31m"
 END="\033[0m"
 
-echo -e $GREEN"************************************************************************"$ENDCOLOR
-echo -e $GREEN"************************** CLEENUX FOR DEBIAN **************************"$ENDCOLOR
-echo -e $GREEN"************************      GITHUB/KID-X      ************************"$ENDCOLOR
-echo -e $GREEN"************************************************************************"$ENDCOLOR
+echo -e $GREEN"************************************************************************"$END
+echo -e $GREEN"************************** CLEENUX FOR DEBIAN **************************"$END
+echo -e $GREEN"************************      GITHUB/KID-X      ************************"$END
+echo -e $GREEN"************************************************************************"$END
 echo -e
 echo -e
 
@@ -27,6 +27,13 @@ sleep 1
 
 echo -e $YELLOW"CLEENUX >> CLEARING RETRIEVED PACKAGE FILES..."$RED
 sudo apt-get clean
+echo -e $GREEN"DONE!"$RED
+echo -e
+
+sleep 1
+
+echo -e $YELLOW"CLEENUX >> CLEARING DEPENDENCIES THAT ARE NO LONGER REQUIRED..."$RED
+sudo apt-get autoremove
 echo -e $GREEN"DONE!"$RED
 echo -e
 
