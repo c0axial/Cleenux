@@ -50,7 +50,7 @@ printf $GREEN"DONE!\n"$RED
 printf "\n"
 
 sleep 1
-
+read -p $BLINK"WARNING! DOUBLE CHECK THE TRASH FOR ITEMS YOU WANT\n"$RED
 printf $YELLOW"CLEENUX >> CLEARING TRASHED ITEMS...\n"$RED
 rm -rf /home/*/.local/share/Trash/*/** &> /dev/null
 rm -rf /root/.local/share/Trash/*/** &> /dev/null
@@ -60,7 +60,7 @@ printf "\n"
 sleep 1
 
 printf $YELLOW"CLEENUX >> CLEARING OLD KERNELS...\n"$REDL
-printf $BLINK"WARNING! REMOVING OLD KERNALS COULD CAUSE PROBLEMS. CONTINUE? [Y/N] : \n"$RED
+printf $BLINK"WARNING! REMOVING OLD KERNALS COULD CAUSE PROBLEMS. CONTINUE? [Y/N] : "$RED
 printf "\n" 
 sudo apt-get purge $OLDKERNELS
 printf $GREEN"DONE!\n"$RED
