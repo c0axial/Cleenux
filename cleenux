@@ -38,7 +38,7 @@ printf "\n"
 
 sleep 1
 printf $YELLOW"CLEENUX >> CLEARING RETRIEVED PACKAGE FILES...\n"$RED
-sudo apt-get clean
+sudo apt-get autoclean
 printf $GREEN"DONE!\n"$RED
 printf "\n"
 
