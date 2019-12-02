@@ -50,7 +50,10 @@ printf $GREEN"DONE!\n"$RED
 printf "\n"
 
 sleep 1
-read -p $BLINK"WARNING! DOUBLE CHECK THE TRASH FOR ITEMS YOU WANT\n"$RED
+printf $YELLOW
+printf $BLINK
+read -p "WARNING! DOUBLE CHECK THE TRASH FOR ITEMS YOU WANT & [ENTER]"
+printf $END
 printf $YELLOW"CLEENUX >> CLEARING TRASHED ITEMS...\n"$RED
 rm -rf /home/*/.local/share/Trash/*/** &> /dev/null
 rm -rf /root/.local/share/Trash/*/** &> /dev/null
